@@ -3,9 +3,10 @@ import csv
 import os
 import datetime
 
+# 保存フォルダ名を変更
 DATA_FILE = "customers.csv"
 VISIT_FILE = "visits.csv"
-PHOTO_DIR = "visit_photos"
+PHOTO_DIR = "photos"
 os.makedirs(PHOTO_DIR, exist_ok=True)
 
 # --------------------- データ読み込みと保存 ---------------------
@@ -61,12 +62,11 @@ menu_options = ["ワンカラー", "フレンチ", "定額コース", "シンプ
 # --------------------- UI ---------------------
 st.title("💅 ネイルサロン顧客管理アプリ")
 
-# トップに戻るボタン（home以外のページ）
 if st.session_state.page != "home":
     if st.button("🏠 トップに戻る"):
         st.session_state.page = "home"
         st.session_state.search_keyword = ""
-        st.rerun()  # ← 即座に画面更新
+        st.rerun()
     st.markdown("---")
 
 # --------------------- トップページ ---------------------
